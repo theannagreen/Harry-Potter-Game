@@ -1,0 +1,40 @@
+/Psudeocode:
+// 1. Define required constants: 
+    // maxAttempts: the maximum number of incorrect guesses allowed before the game is over 
+    // words: array of letters the player is can guess 
+
+// 2. Define required variables used to track the state of the game:
+//    secretWord: the word/phrase to be guessed 
+//    guessedLetters: array to store the correctly guessed letters 
+//    incorrectGuesses:number of incorrect guesses made by the player
+//    gameWon: boolean to track if the game is won 
+//    gameOver: boolean to track if the game is over 
+
+// 3. Store elements on the page that will be accessed in code more than once in variables
+//     replayButton: an element that will be used to replay the game
+//     inputBox: an element that will be used to get the player's guessed letters
+//     wordDisplay: element to display the secret word with hidden letters
+
+// 4. Upon loading the app should: 
+// 4.1 Initalize the state variables 
+      // set secretWord to a random word from the words array 
+      // initalize guessedLetters to an empty array 
+      // set incorrect guesses to 0 
+      // set gameWon and gameLost to false 
+// 4.2 Render those values to the page
+      // display the secret word with hidden letters on wordDisplay
+      // display the inputBox for the player to input guess letters
+      // display the messageBox for game messages
+// 4.3 Wait for the user to click a square -> letter from the alphabet 
+      
+// 5. Handle a player clicking a square 
+  // Retrieve the guessed letter from the inputBox
+  // If the letter is not in the secretWord, increment incorrectGuesses by 1
+  // If the letter is in the secretWord, revel the letter in the wordDisplay
+  // check if the game is won or lost 
+  // if all the letters in the secretWord are guessed, set gameWon to true 
+  // if incorectGuesses reaches maxAttempts, set gameLost to true 
+  // render updated message in the messageBox
+
+// 6. Handle a player clicking the replay button 
+  // Reset the game state variables to their initial values
