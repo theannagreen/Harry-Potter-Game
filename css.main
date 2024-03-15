@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: boarder-box;
+    font-size: san-serif;
+}
+
+body {
+    background-color: #f4efe1;
+}
+
+game-container {
+    font-size: 16px;
+    background-color: #6d4e32;
+    width: 90vw;
+    max-width: 34em; //temporary
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    padding: 3em; //temporary
+}
