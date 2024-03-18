@@ -20,6 +20,9 @@ const wordContainer = document.getElementById('word');
 
 /*----- event listeners -----*/
 document.addEventListener('DOMContentLoaded', function() {
+const newGameButton = document.getElementById('replay-button');
+newGameButton.addEventListener('click', startNewGame);
+
 letterButtons.forEach(function(button) {
  button.addEventListener('click', function() {
   //get the letter the player clicked on
@@ -33,27 +36,31 @@ letterButtons.forEach(function(button) {
     }
    });
  });
+
+// Initialize the Game
 init();
 });
-
 /*----- functions -----*/
 
-function init() {
-// select a random word from the array 
-word= words[Math.floor(Math.random() * words.length)];
-displayWord(word);  
+function startNewGame() {
+// reset game state   
 guesses = [];
 wrongLetters = [];
-lives =  8;
+lives =  maxWrong;
 win = null
-render();
-}
 
-function render() {
-renderWord();
-renderLetterButtons();
-renderMessage();
+// clear the displayed word
+const letterSpans = wordContainer.querySelectorAll('span');
+letterSpans.forEach(function(span) {
+  span.textContent = '_';
+  span.classList.remove('revealed');
+});
+
+// reset hangman image 
 renderImage();
+
+// start new game 
+init();
 }
 
 // reveal a letter in the word 
@@ -88,7 +95,7 @@ const buttons = document.createElement('button');
 buttons.textContent = letters.charAt(i);
 buttons.addEventListener('click', function() {
   // when the letter button is clicked, revel the letter in the word
-  revealLetter(letters.charAt(i);
+  revealLetter(letters.charAt(i));
   //remove the letter button 
   this.parentElement.removeChild(this);
   //check if the player has won
@@ -116,4 +123,50 @@ function displayWord(word) {
 }
 function endGame(message) {
 alert(message);
+}
+
+function renderWord() {
+  const letterSpans = document.querySelectorAll('#word span');
+  letterSpans.forEach(function(span) {
+    if (correctLetters.includes(span.dataset.letter)) {
+      span.classList.add('revealed');
+    } else {
+      span.classList.remove('revealed');
+    }
+  });
+}
+
+function renderLetterButtons() {
+if (win === true) {
+  // Display a win message
+  // You can customize this part based on your preference
+  alert('Congratulations! You won!');
+} else if (win === false && lives === 0) {
+  // Display a loss message
+  // You can customize this part based on your preference
+  alert(`You lost! The word was ${word}.`);
+}
+}
+
+function renderMessage() {
+letterButtons.forEach(function(button) {
+  if (guesses.includes(button.textContent.toLowerCase())) {
+    button.setAttribute('disabled', true);
+  } else {
+    button.removeAttribute('disabled');
+  }
+});
+}
+
+function renderImage() {
+const hangmanImage = document.getElementById('hangman-image');
+const imageIndex = maxWrong - lives;
+hangmanImage.src = `https://i.imgur.com/1ys7mEZ.png`;
+}
+
+function render() {
+renderWord();
+renderLetterButtons();
+renderMessage();
+renderImage();
 }
