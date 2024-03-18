@@ -6,20 +6,53 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, initial-scale=1.0">
   <meta name="viewport" content="width=device-width">
   <title>HarryPotter Word Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Namdhinggo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-    <main>
+    <header>
         <h1>Harry Potter</h1>
         <h2>Cast the Right Spells to Reveal the Secret Word</h2>
         <div class="game-container">
-            <div id="word"></div>
-            <div id="letter-container"></div>
+            <div id="harry-img"><img src="https://imgur.com/1ys7mEZ" alt="Hangman Image"></div>
+        </div>
             <div id="user-input-container"></div> 
-            <div id="new-game-container">
+            <div id="letter-container"></div>
+      <div id="word">_ _ _ _ _ _ _ _ _ _ _</div>  
+      <div id="letters">
+        <button class>A</button>
+        <button class>B</button>
+        <button class>C</button>
+        <button class>D</button>
+        <button class>E</button>
+        <button class>F</button>
+        <button class>G</button>
+        <button class>H</button>
+        <button class>I</button>
+        <button class>J</button>
+        <button class>K</button>
+        <button class>L</button>
+        <button class>M</button>
+        <button class>N</button>
+        <button class>O</button>
+        <button class>P</button>
+        <button class>Q</button>
+        <button class>R</button>
+        <button class>S</button>
+        <button class>T</button>
+        <button class>U</button>
+        <button class>V</button>
+        <button class>W</button>
+        <button class>X</button>
+        <button class>Y</button>
+        <button class>Z</button>
+      </div>  
+            <div id="new-game">
                 <button id="replay-button">New Game</button>
             </div>
-        </main>
+        </header>
 </body>
 </html>

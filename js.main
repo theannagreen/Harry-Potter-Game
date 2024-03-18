@@ -1,25 +1,119 @@
-	/*----- constants -----*/
-    const words = ['Quidditch', 'Hogwarts', 'Hufflepuff', 'Gryffindor', 'Wand', 'Ravenclaw', 'Slytherin', 'Dumbledore', 'Muggle', 'Snape', 'Voldamort', 'Patronus', 'Sectumsempra', 'Hagrid'];
-
-	/*----- state variables -----*/
-
-
-	/*----- cached elements  -----*/
-// DOM elements <div> and <span>
-
-	/*----- event listeners -----*/
+/*----- constants -----*/
+const words = ['Quidditch', 'Hogwarts', 'Hufflepuff', 'Gryffindor', 'Wand', 'Ravenclaw', 'Slytherin', 'Dumbledore', 'Muggle', 'Snape', 'Voldamort', 'Patronus', 'Sectumsempra', 'Hagrid', 'Harry'];
+const maxWrong = 8;
 
 
-	/*----- functions -----*/
-    function displayWord(word) {
-        const wordContainer = document.getElementById('word');
-        wordContainer.innerHTML = ''; // clearing any existing content 
+/*----- state variables -----*/
+let wrongLetters;
+let correctLetters;
+let lives;
+let win;
+let guesses;
+let word;
 
-        //iterate over each letter in the word
-        for (let i = 0; i < word.length; i++) {
-            const letterSpan = doceument.createElement('span');
-            letterSpan.textContent = '_'; 
-            wordContainer.appendChild(letterSpan);
-        }
+
+/*----- cached elements  -----*/
+const livesElement = document.getElementById('lives'); 
+const letterButtons = document.querySelectorAll('#letters button');
+const wordContainer = document.getElementById('word');
+
+
+/*----- event listeners -----*/
+document.addEventListener('DOMContentLoaded', function() {
+letterButtons.forEach(function(button) {
+ button.addEventListener('click', function() {
+  //get the letter the player clicked on
+  const letter = button.textContent;
+  if (word.includes(letter)) {
+    // update the display word
+    revealLetter(letter);
+  } else {
+    //decrease the number of remaining guesses 
+    incorrectGuesses();
     }
-console.log(displayWord(randomWord));
+   });
+ });
+init();
+});
+
+/*----- functions -----*/
+
+function init() {
+// select a random word from the array 
+word= words[Math.floor(Math.random() * words.length)];
+displayWord(word);  
+guesses = [];
+wrongLetters = [];
+lives =  8;
+win = null
+render();
+}
+
+function render() {
+renderWord();
+renderLetterButtons();
+renderMessage();
+renderImage();
+}
+
+// reveal a letter in the word 
+function revealLetter(letter) {
+// find all the spans representing letters in the word container
+const letterSpans = document.querySelectorAll('span');
+letterSpans.forEach(function(span) {
+  if (span.textContent === letter.toUpperCase()) {
+    span.classList.add('revealed');
+  }
+});
+checkWin();
+}
+
+
+function incorrectGuesses() {
+livesElement.textContent = parseInt(livesElement.textContent) -1;
+//check if the player has lost 
+if (parseInt(livesElement.textContent) === 0) {
+  // end the game if player hass no lives left 
+  endGame('You lost! The word was ${word}.');
+}
+}
+
+// render the game 
+function generateLetterButtons() {
+letterButtonsContainer.innerHTML = ''; //clearing any existing content 
+// generate a new set of letter buttons 
+const letters = 'abcdefghijklmnopqrstuvwxyz';
+for (let i = 0; i < letters.length; i++) {
+const buttons = document.createElement('button');
+buttons.textContent = letters.charAt(i);
+buttons.addEventListener('click', function() {
+  // when the letter button is clicked, revel the letter in the word
+  revealLetter(letters.charAt(i);
+  //remove the letter button 
+  this.parentElement.removeChild(this);
+  //check if the player has won
+  if (!document.querySelector('span:empty')) {
+    const letterSpans = document.querySelectorAll('#letter-container span');
+    const guessedWord = Array.from(letterSpans).map(span => span.dataset.letter).join('');
+    if (guessedWord.toLowerCase() === word.toLowerCase()) {
+      //player has won
+      endGame('Congratulations! You won!');
+    }
+  }
+});
+letterButtonsContainer.appendChild(button);
+}
+}
+function displayWord(word) {
+    wordContainer.innerHTML = ''; // clearing any existing content 
+    //iterate over each letter in the word
+    for (let i = 0; i < word.length; i++) {
+        const letterSpan = document.createElement('span');
+        letterSpan.textContent = '_'; 
+        letterSpan.dataset.letter = word.charAt(i).toUpperCase();
+        wordContainer.appendChild(letterSpan);
+    }
+}
+function endGame(message) {
+alert(message);
+}

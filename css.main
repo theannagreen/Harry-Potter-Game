@@ -1,27 +1,39 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: boarder-box;
-    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-family: Madimi One, sans-serif;
+}
+.madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.body {
+body {
     height: auto;
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
     background-color: #f4efe1;
+    background-position: center;
+    background-size: cover;
+    background-size: contain;
 }
 
-.game-container {
-    font-size: 16px;
-    background-color: #6d4e32;
-    width: 90vw;
-    max-width: 34em; //temporary
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    padding: 3em; // temporary
+button {
+  margin: 3px;
+  background-color: white;
+  color: #669c35
+  boarder: 1vmin solid #669c35;
+  border-radius: 2vmin;
+  font-size: 10px;
+  outline: none;
+  font-weight: bold;
+}
+button:hover {
+  background-color: light #666100;
+  color: gray;
+}
+#game-container {
+    display: flex;
 }
 
 .letter-container {
@@ -30,8 +42,65 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.6em;
+    background-color: #6d4e38; 
 }
+
 #letter-container button {
-    height: 2.4em;
-    width: 2;
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: #6d4e32;
+    color: #f4efe1
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+#letter-container button:hover {
+  background-color: #8a6a4f;
+}
+
+h1 {
+    font-size: 78px;
+    text-align: center;
+}
+
+h2 {
+  font: 36px;
+  text-align: center;
+}
+
+#new-game {  //needs suppport 
+  text-align: center;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#replay-button {
+  background-color: beige;
+  font-family: Arial;
+  font-weight: bold;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#word {
+  font-weight: bold;
+  color: #666100;
+  font-size: 50px;
+}
+#letters {
+  flex-wrap: wrap;
+  display: flex;
+  width: 500px;
+}
+#harry-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
