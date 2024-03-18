@@ -2,14 +2,18 @@
     padding: 0;
     margin: 0;
     box-sizing: boarder-box;
-    font-size: san-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+.body {
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     background-color: #f4efe1;
 }
 
-game-container {
+.game-container {
     font-size: 16px;
     background-color: #6d4e32;
     width: 90vw;
@@ -17,5 +21,17 @@ game-container {
     position: absolute;
     top: 50%; 
     left: 50%;
-    padding: 3em; //temporary
+    padding: 3em; // temporary
+}
+
+.letter-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6em;
+}
+#letter-container button {
+    height: 2.4em;
+    width: 2;
 }

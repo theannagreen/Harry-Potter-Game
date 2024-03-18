@@ -1,13 +1,25 @@
 	/*----- constants -----*/
-    const words 
+    const words = ['Quidditch', 'Hogwarts', 'Hufflepuff', 'Gryffindor', 'Wand', 'Ravenclaw', 'Slytherin', 'Dumbledore', 'Muggle', 'Snape', 'Voldamort', 'Patronus', 'Sectumsempra', 'Hagrid'];
 
 	/*----- state variables -----*/
 
 
 	/*----- cached elements  -----*/
-
+// DOM elements <div> and <span>
 
 	/*----- event listeners -----*/
 
 
 	/*----- functions -----*/
+    function displayWord(word) {
+        const wordContainer = document.getElementById('word');
+        wordContainer.innerHTML = ''; // clearing any existing content 
+
+        //iterate over each letter in the word
+        for (let i = 0; i < word.length; i++) {
+            const letterSpan = doceument.createElement('span');
+            letterSpan.textContent = '_'; 
+            wordContainer.appendChild(letterSpan);
+        }
+    }
+console.log(displayWord(randomWord));
