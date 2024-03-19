@@ -16,6 +16,8 @@ let word;
 const livesElement = document.getElementById('lives'); 
 const letterButtons = document.querySelectorAll('#letters button');
 const wordContainer = document.getElementById('word');
+const letterButtonsContainer = document.getElementById('letters');
+
 
 
 /*----- event listeners -----*/
@@ -41,13 +43,15 @@ letterButtons.forEach(function(button) {
 init();
 });
 /*----- functions -----*/
-
+function init() {
+word = words[Math.floor(Math.random() * words.length)].toUpperCase();
+}
 function startNewGame() {
 // reset game state   
 guesses = [];
 wrongLetters = [];
 lives =  maxWrong;
-win = null
+win = null;
 
 // clear the displayed word
 const letterSpans = wordContainer.querySelectorAll('span');
@@ -100,7 +104,7 @@ buttons.addEventListener('click', function() {
   this.parentElement.removeChild(this);
   //check if the player has won
   if (!document.querySelector('span:empty')) {
-    const letterSpans = document.querySelectorAll('#letter-container span');
+    const letterSpans = document.querySelectorAll('#word span');
     const guessedWord = Array.from(letterSpans).map(span => span.dataset.letter).join('');
     if (guessedWord.toLowerCase() === word.toLowerCase()) {
       //player has won
@@ -108,7 +112,7 @@ buttons.addEventListener('click', function() {
     }
   }
 });
-letterButtonsContainer.appendChild(button);
+letterButtonsContainer.appendChild(buttons);
 }
 }
 function displayWord(word) {
