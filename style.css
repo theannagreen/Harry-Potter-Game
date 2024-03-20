@@ -1,106 +1,131 @@
 * {
-    box-sizing: border-box;
-    font-family: Madimi One, sans-serif;
+  box-sizing: border-box;
+  font-family: Madimi One, sans-serif;
 }
 .madimi-one-regular {
-  font-family: "Madimi One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+font-family: "Madimi One", sans-serif;
+font-weight: 400;
+font-style: normal;
 }
 
 body {
-    height: auto;
-    width: auto;
-    display: grid;
-    background-color: #f4efe1;
-    background-position: center;
-    background-size: cover;
-    background-size: contain;
+  height: auto;
+  width: auto;
+  display: center;
+  background-color: #f4efe1;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  background-size: contain;
 }
 
 button {
-  margin: 3px;
-  background-color: white;
-  color: #669c35
-  boarder: 1vmin solid #669c35;
-  border-radius: 2vmin;
-  font-size: 10px;
-  outline: none;
-  font-weight: bold;
+margin: 3px;
+background-color: white;
+color: #669c35;
+border: 1vmin solid #669c35;
+border-radius: 2vmin;
+font-size: 10px;
+outline: none;
+font-weight: bold;
 }
 button:hover {
-  background-color: light #666100;
-  color: gray;
+background-color: light #666100;
+color: gray;
 }
 #game-container {
-    display: flex;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
 }
 
 .letter-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6em;
-    background-color: #6d4e38; 
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6em;
+  background-color: #6d4e38; 
 }
 
 #letter-container button {
-    height: 50px;
-    width: 50px;
-    font-size: 24px;
-    margin: 10px;
-    border-radius: 5px;
-    border-color: #6d4e32;
-    color: #f4efe1
-    border: none;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+  margin: 10px;
+  border-radius: 5px;
+  border-color: #6d4e32;
+  color: #f4efe1;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 #letter-container button:hover {
-  background-color: #8a6a4f;
+background-color: #8a6a4f;
 }
 
 h1 {
-    font-size: 78px;
-    text-align: center;
+  font-size: 78px;
+  text-align: center;
 }
 
 h2 {
-  font: 36px;
-  text-align: center;
-}
-
-#new-game {  //needs suppport 
-  text-align: center;
-  position: fixed;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#replay-button {
-  background-color: beige;
-  font-family: Arial;
-  font-weight: bold;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#word {
-  font-weight: bold;
-  color: #666100;
-  font-size: 50px;
-}
-#letters {
-  flex-wrap: wrap;
-  display: flex;
-  width: 500px;
+font: 36px;
+text-align: center;
 }
 #harry-img {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+margin: auto;
+transition: opacity 0.5s ease-in-out;
+opacity: 1;
+}
+.harry-img-hidden {
+opacity: 0;
+}
+.word-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap:  10px;
+font-weight: bold;
+color: #666100;
+font-size: 50px; 
+}
+#new-game { 
+text-align: center;
+margin-top: 20px;
+}
+
+#letters {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.6em;
+text-align: center;
+margin: auto
+}
+
+#letters button {
+height: 50px;
+width: 50px;
+font-size: 1.5rem; 
+margin: 5px;
+border-radius: 5px;
+border: none;
+background-color: #fff;
+color: #669c35;
+cursor: pointer;
+text-align: center;
+}
+#replay-button {
+background-color: beige;
+font-family: Arial;
+font-weight: bold;
+padding: 10px 20px;
+border: none;
+border-radius: 10px;
+cursor: pointer;
 }
