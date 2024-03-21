@@ -8,8 +8,10 @@ Table of Contents:
 2. Features
 3. How to Play 
 4. Technologies Used 
+5. Play Game 
 
-Introduction:
+
+Introduction:⚡️
 In this game, you'll step into the shoes of a young wizard eagar to demonstrate their magical skill! Your task is to cast 
 the right spells, to reveal the secret word to the world of Harry Potter. With each correct guess, a piece of the puzzle 
 will appear and bring you closed to uncovering the hidden word. 
@@ -17,14 +19,14 @@ will appear and bring you closed to uncovering the hidden word.
 BEWARE! Every incorrect guess brings you one step closer to losing the game. The fate of your magical journey rests 
 in your ablitiy to choose wisely and unveil the secrets that lie within the enchanted words. 
 
-![Screenshot of Application](imgs/Screenshot%20of%20Full%20Game.png)
+![Screenshot of Application](./imgs/Screenshot%20of%20Full%20Game.png)
 
-Background: 
-The Harry Potter series, created by J.K. Rowling, has captivated audiences worldwide with it's tales of friendship, 
+Background:⚡️
+The Harry Potter series, created by J.K. Rowling, has captivgitated audiences worldwide with it's tales of friendship, 
 courage and the power of magic. Set in the world of wizardtry, the series follows the adventures of Harry Potter and his 
 friends as they navigate the trials and tribulations of Hogwarts School of Witchcraft and Wizardry. 
 
-Features: 
+Features:⚡️ 
 Letter Selection: Players can select a letter on the page to guess the hidden word. 
 Word Revelation: With each correct guess, the player can reveal parts of the hidden word, getting closer to 
 solving the puzzle. 
@@ -32,7 +34,7 @@ Progressive Challenge: Incorrect guesses lead to the gradual disappearance of th
 broom. 
 Limited Guesses: Players have a maximum of 6 wrong guesses before its game over. 
 
-How to Play: 
+How to Play:⚡️ 
 1. Start the Game: Upon entering the webpage, a hidden word related to the magical world of Harry Potter is generated. 
 2. Guess the Word: To uncover the  hidden word, select a letter from the avaliable options on the page. 
 3. Correct Guesses: With each correct gyess, parts of the hidden word will be revealed, bringing you closer to solving 
@@ -41,45 +43,11 @@ the puzzle.
 gradually dsiappear. You have a maximum of 6 wrong guesses, a game over image will appear, signallying the end of the game.
 5. Try Again: If you wish to embark on another magical adventure, simply select "New Game" and the bottom of the page to start fresh. 
 
+Technologies Used:⚡️
+1. JavaScript 
+2. HTML 
+3. CSS
 
 
-//Psudeocode:
-// 1. Define required constants: 
-    // maxAttempts: the maximum number of incorrect guesses allowed before the game is over 
-    // words: array of letters the player is can guess 
-
-// 2. Define required variables used to track the state of the game:
-//    secretWord: the word/phrase to be guessed 
-//    guessedLetters: array to store the correctly guessed letters 
-//    incorrectGuesses:number of incorrect guesses made by the player
-//    gameWon: boolean to track if the game is won 
-//    gameOver: boolean to track if the game is over 
-
-// 3. Store elements on the page that will be accessed in code more than once in variables
-//     replayButton: an element that will be used to replay the game
-//     inputBox: an element that will be used to get the player's guessed letters
-//     wordDisplay: element to display the secret word with hidden letters
-
-// 4. Upon loading the app should: 
-// 4.1 Initalize the state variables 
-      // set secretWord to a random word from the words array 
-      // initalize guessedLetters to an empty array 
-      // set incorrect guesses to 0 
-      // set gameWon and gameLost to false 
-// 4.2 Render those values to the page
-      // display the secret word with hidden letters on wordDisplay
-      // display the inputBox for the player to input guess letters
-      // display the messageBox for game messages
-// 4.3 Wait for the user to click a square -> letter from the alphabet 
-      
-// 5. Handle a player clicking a square 
-  // Retrieve the guessed letter from the inputBox
-  // If the letter is not in the secretWord, increment incorrectGuesses by 1
-  // If the letter is in the secretWord, revel the letter in the wordDisplay
-  // check if the game is won or lost 
-  // if all the letters in the secretWord are guessed, set gameWon to true 
-  // if incorectGuesses reaches maxAttempts, set gameLost to true 
-  // render updated message in the messageBox
-
-// 6. Handle a player clicking the replay button 
-  // Reset the game state variables to their initial values
+Play the Harry Potter Game:⚡️
+Click [here](http://127.0.0.1:5500/) to play the Harry Potter Game! 
