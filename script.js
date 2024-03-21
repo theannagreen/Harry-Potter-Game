@@ -26,7 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
   generateLetterButtons();
   init();
 
+  // play audio after DOM content is loaded 
+  const audio = document.getElementById('audio');
+  audio.play();
 });
+
 /*----- functions -----*/
 function init() {
   word = words[Math.floor(Math.random() * words.length)].toUpperCase();

@@ -13,7 +13,7 @@
 
 body {
   height: 100vh;
-  width: 100vh;
+  width: 100%;
   background-color: #f4efe1;
   background-image: url('/background/HP_Background.jpg');
   background-position: center;
@@ -79,7 +79,7 @@ h2 {
   justify-content: center;
   gap: 0.6em;
   text-align: center;
-  margin: auto
+  margin: 20px auto 0;
 }
 
 #letters button {
@@ -99,7 +99,8 @@ h2 {
   background-color: burlywood;
   font-family: Madimi One, sans-serif;
   font-weight: bold;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
   border: 20px;
+  margin-top: 20px;
 }
