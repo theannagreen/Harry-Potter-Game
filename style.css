@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   font-family: Madimi One, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .madimi-one-regular {
@@ -10,14 +12,15 @@
 }
 
 body {
-  height: auto;
-  width: auto;
-  display: center;
+  height: 100vh;
+  width: 100vh;
   background-color: #f4efe1;
-  flex-direction: column;
+  background-image: url('/background/HP_Background.jpg');
   background-position: center;
   background-size: cover;
-  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -31,16 +34,16 @@ button {
   font-weight: bold;
 }
 
-button:hover {
+.button:hover:hover {
   background-color: light #666100;
   color: gray;
 }
 
-#game-container {
+.game-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 h1 {
@@ -53,12 +56,6 @@ h2 {
   text-align: center;
 }
 
-/* .harry-img-container {
-background-size: cover;
-background-position: center;
-margin: auto;
-opacity: 1; */
-/* } */
 .word-container {
   display: flex;
   justify-content: center;
@@ -72,7 +69,8 @@ opacity: 1; */
 
 #new-game {
   text-align: center;
-  margin-top: 20px;
+  margin-top: -20px;
+  color: #666100;
 }
 
 #letters {
@@ -92,17 +90,16 @@ opacity: 1; */
   border-radius: 5px;
   border: none;
   background-color: #fff;
-  color: #669c35;
+  color: antiquewhite
   cursor: pointer;
   text-align: center;
 }
 
 #replay-button {
-  background-color: beige;
-  font-family: Arial;
+  background-color: burlywood;
+  font-family: Madimi One, sans-serif;
   font-weight: bold;
-  padding: 10px 20px;
-  border: none;
+  padding: 30px;
   border-radius: 10px;
-  cursor: pointer;
+  border: 20px;
 }

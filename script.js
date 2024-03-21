@@ -19,7 +19,6 @@ const hangmanImageContainer = document.getElementById('hangman-img-container');
 
 /*----- event listeners -----*/
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('content loaded');
   const newGameButton = document.getElementById('replay-button');
   newGameButton.addEventListener('click', startNewGame);
 
@@ -34,22 +33,17 @@ function init() {
   displayWord(word);
   letterButtons.forEach(function (button) {
     button.addEventListener('click', function () {
-      console.log('Button clicked!');
-      //get the letter the player clicked on
       const letter = button.textContent;
       if (word.includes(letter)) {
-        // update the display word
         revealLetter(letter);
       } else {
-        //decrease the number of remaining guesses 
         incorrectGuesses();
       }
     });
   });
 }
 
-function startNewGame() {
-  // reset game state   
+function startNewGame() { 
   guesses = [];
   wrongLetters = [];
   lives = maxWrong;
@@ -59,22 +53,15 @@ function startNewGame() {
   // clear the displayed word 
   if (wordContainer) {
     wordContainer.innerHTML = '';
-    // reset hangman image 
-    renderImage();
-    // clear the guessed letters
     generateLetterButtons();
-    // start new game 
     init();
-    // reset Harry Potter img
-    showHarryImage();
+    renderImage();
   } else {
     console.error('Word container not found');
   }
 }
 
-// reveal a letter in the word 
 function revealLetter(letter) {
-  // find all the spans representing letters in the word container
   const letterSpans = document.querySelectorAll('.word-container span');
   letterSpans.forEach(function (span) {
     if (span.dataset.letter === letter.toUpperCase()) {
@@ -86,20 +73,10 @@ function revealLetter(letter) {
 }
 
 function incorrectGuesses() {
-  console.log('Before calling updateHarryImage');
-  console.log('Wrong guesses count:', wrongGuesses);
-  // livesElement.textContent = parseInt(livesElement.textContent) - 1;
   wrongGuesses++; //increment wrong guesses 
   renderImage();
-  // updateHarryImage();
-  //check if the player has lost 
-  // if (parseInt(livesElement.textContent) === 0) {
-  //   // update the lost state variable 
-  //   lost = true;
-  //   // end the game if player hass no lives left 
-  //   endGame(`You lost! The word was ${word}.`);
-  // }
 }
+
 function updateHarryImage() {
   if (wrongGuesses < harryImages.length) {
     const imagePath = harryImages[wrongGuesses];
@@ -109,7 +86,6 @@ function updateHarryImage() {
 }
 // render the game 
 function generateLetterButtons() {
-  console.log('buttons generated');
   letterButtonsContainer.innerHTML = ''; //clearing any existing content
   // generate a new set of letter buttons 
   const letters = 'abcdefghijklmnopqrstuvwxyz';
