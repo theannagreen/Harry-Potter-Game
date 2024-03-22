@@ -14,7 +14,7 @@
 body {
   height: 100vh;
   width: 100%;
-  background-color: green;
+  background-color: #f4efe1;
   background-image: url('./background/HP_Background.jpg');
   background-position: center;
   background-size: cover;
@@ -90,7 +90,7 @@ h2 {
   border-radius: 5px;
   border: none;
   background-color: #fff;
-  color: antiquewhite
+  color: #666100;
 }
 
 #replay-button {

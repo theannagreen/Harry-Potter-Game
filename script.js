@@ -9,13 +9,14 @@ let win;
 let guesses;
 let word;
 let wrongGuesses = 0;
+let lives = maxWrong;
 
 /*----- cached elements  -----*/
 let letterButtons = document.querySelectorAll('.letter-button');
 const letterButtonsContainer = document.getElementById('letters');
 const wordContainer = document.querySelector('.word-container');
-const hangmanImage = document.getElementById('hangman-img-hidden');
 const hangmanImageContainer = document.getElementById('hangman-img-container');
+const audio = document.getElementById('audio');
 
 /*----- event listeners -----*/
 document.addEventListener('DOMContentLoaded', function () {
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   init();
 
   // play audio after DOM content is loaded 
-  const audio = document.getElementById('audio');
+  audio.volume = .29
   audio.play();
 });
 
@@ -41,8 +42,9 @@ function init() {
       if (word.includes(letter)) {
         revealLetter(letter);
       } else {
-        incorrectGuesses();
+        incorrectGuesses(letter);
       }
+      console.log('incorrect guesses are working', button);
     });
   });
 }
@@ -53,6 +55,7 @@ function startNewGame() {
   lives = maxWrong;
   win = null;
   wrongGuesses = 0;
+  lives = maxWrong;
 
   // clear the displayed word 
   if (wordContainer) {
@@ -76,9 +79,14 @@ function revealLetter(letter) {
   checkWin();
 }
 
-function incorrectGuesses() {
-  wrongGuesses++; //increment wrong guesses 
-  renderImage();
+function incorrectGuesses(letter) {
+  if (!word.includes(letter)) {
+
+    wrongGuesses++; 
+    lives --;
+    renderImage();
+  }
+    checkLose();
 }
 
 function updateHarryImage() {
@@ -123,7 +131,11 @@ function displayWord(word) {
     console.log('Word container not found!')
   }
 }
-
+function checkLose() {
+  if (lives === 0) {
+    endGame('Sorry! You lose.The correct word was: '+ word);
+  }
+}
 function endGame(message) {
   alert(message);
 }
