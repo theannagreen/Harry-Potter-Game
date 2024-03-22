@@ -14,8 +14,8 @@
 body {
   height: 100vh;
   width: 100%;
-  background-color: #f4efe1;
-  background-image: url('/background/HP_Background.jpg');
+  background-color: hsl(44, 46%, 92%);
+  background-image: url('./background/HP_Background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
