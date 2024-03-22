@@ -56,8 +56,7 @@ function startNewGame() {
   win = null;
   wrongGuesses = 0;
   lives = maxWrong;
-
-  // clear the displayed word 
+ 
   if (wordContainer) {
     wordContainer.innerHTML = '';
     generateLetterButtons();
@@ -96,21 +95,15 @@ function updateHarryImage() {
     hangmanImage.src = harryImages[wrongGuesses];
   }
 }
-// render the game 
 function generateLetterButtons() {
-  letterButtonsContainer.innerHTML = ''; //clearing any existing content
-  // generate a new set of letter buttons 
+  letterButtonsContainer.innerHTML = ''; 
   const letters = 'abcdefghijklmnopqrstuvwxyz';
   for (let i = 0; i < letters.length; i++) {
     const buttons = document.createElement('button');
     buttons.classList.add('letter-button');
-    // the text content of the button is set to a letter 
     buttons.textContent = letters.charAt(i);
-    // added an event listener to each button 
     buttons.addEventListener('click', function () {
-      // when the letter button is clicked, revel the letter in the word
       revealLetter(buttons.textContent);
-      //remove the letter button 
       this.parentElement.removeChild(this);
     });
     letterButtonsContainer.appendChild(buttons);
@@ -120,7 +113,6 @@ function generateLetterButtons() {
 
 function displayWord(word) {
   if (wordContainer) {
-    // iterate over each letter in the word and create spans
     for (let i = 0; i < word.length; i++) {
       const letterSpan = document.createElement('span');
       letterSpan.textContent = '_';
