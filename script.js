@@ -39,7 +39,7 @@ function init() {
   letterButtons.forEach(function (button) {
     button.addEventListener('click', function () {
       const letter = button.textContent;
-      if (word.includes(letter)) {
+      if (word.includes(letter.toUpperCase())) {
         revealLetter(letter);
       } else {
         incorrectGuesses(letter);
