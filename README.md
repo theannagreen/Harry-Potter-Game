@@ -20,7 +20,6 @@ BEWARE! Every incorrect guess brings you one step closer to losing the game. The
 in your ablitiy to choose wisely and unveil the secrets that lie within the enchanted words. 
 
 <img src="./imgs_read.me/screenshot.jpg">
-<img src="./imgs_read.me/game-over.jpg>">
 
 ## Background:⚡️ 
 The Harry Potter series, created by J.K. Rowling, has captivated audiences worldwide with it's tales of friendship, 
