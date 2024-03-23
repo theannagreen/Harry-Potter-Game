@@ -9,6 +9,7 @@ cast the right spells to reveal the secret word related to the magical world of 
 3. [How to Play](#how-to-play) 
 4. [Technologies Used](#technologies-used)
 5. [Play the Harry Potter Game](#play-the-harry-potter-game) 
+6. [Future Enhancements](#future-enhancements)
 
 ## Introduction:⚡️
 In this game, you'll step into the shoes of a young wizard eager to demonstrate their magical skill! Your task is to cast 
@@ -49,3 +50,9 @@ gradually disappear. You have a maximum of 6 wrong guesses, a game over image wi
 
 ## Play the Harry Potter Game:⚡️
 Click [here](https://theannagreen.github.io/Harry-Potter-Game/) to play the Harry Potter Game! 
+
+## Future Enhancements:⚡️
+In the near future I plan on revisiting this game and making the following technical enhancements: 
+    1. Scoreboard: I would implement a scoreboard to track the performance of the player during the game. 
+    2. Hint System: I would add a hint system to provide players with clues about the secret word. 
+    3. Language: I would provide support for multiple languages to make the game accessible to a wider audience. Upon entering the webpage I would have a popup that would allow players to choose their preferred language for their user interface and game text. 
